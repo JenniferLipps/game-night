@@ -1,4 +1,8 @@
+@import './_colors';
+@import './_variables';
+
 body {
+  background-color: $background;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
