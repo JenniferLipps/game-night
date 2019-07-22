@@ -1,0 +1,11 @@
+{
+  "firebaseConfig": {
+    "apiKey": "AIzaSyD758f0BAEHOBi-efELcCJhPDFq5IPUJ98",
+    "authDomain": "game-night-739e3.firebaseapp.com",
+    "databaseURL": "https://game-night-739e3.firebaseio.com",
+    "projectId": "game-night-739e3",
+    "storageBucket": "",
+    "messagingSenderId": "782289418987",
+    "appId": "1:782289418987:web:c382528500280901"
+  }
+}
