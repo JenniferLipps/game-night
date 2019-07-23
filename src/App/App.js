@@ -10,6 +10,7 @@ import firebase from 'firebase/app';
 
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
+import MyLibrary from '../components/MyLibrary/MyLibrary';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
 import fbConnection from '../helpers/data/fbConnection';
 import './App.scss';
@@ -65,7 +66,7 @@ class App extends React.Component {
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed} />
                   <PrivateRoute path='/home' component={Home} authed={authed} />
-                  <PrivateRoute path='/gameslibrary' component={GamesLibrary} authed={authed} />
+                  <PrivateRoute path='/mylibrary' component={MyLibrary} authed={authed} />
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>

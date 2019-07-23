@@ -29,9 +29,6 @@ class MyNavbar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink>Game Library</NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink>My Library</NavLink>
               </NavItem>
               <NavItem>
