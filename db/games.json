@@ -1,0 +1,92 @@
+{
+  "game1": {
+    "title": "Settlers of Catan",
+    "typeId": "type5",
+    "maker": "Catan Studio",
+    "minPlayers": "2",
+    "maxPlayers": "4",
+    "image": "https,://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Catan-2015-boxart.jpg/250px-Catan-2015-boxart.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game2": {
+    "title": "Azul",
+    "typeId": "type10",
+    "maker": "Plan B Games",
+    "minPlayers": "2",
+    "maxPlayers": "4",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/2/23/Picture_of_Azul_game_box.jpg/220px-Picture_of_Azul_game_box.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game3": {
+    "title": "Harry Potter Hogwarts Battle",
+    "typeId": "type1",
+    "maker": "USAopoly",
+    "minPlayers": "2",
+    "maxPlayers": "4",
+    "image": "https://theop.games/wp-content/uploads/2019/01/hp_db_3dbt_web_0.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game4": {
+    "title": "Pandemic Legacy",
+    "typeId": "type4",
+    "maker": "Z-Man Games",
+    "minPlayers": "2",
+    "maxPlayers": "4",
+    "image": "https://cf.geekdo-images.com/itemrep/img/n8626bWQOoE_1nqvLUXi_6QfYO0=/fit-in/246x300/pic2452831.png",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game5": {
+    "title": "Small World",
+    "typeId": "type7",
+    "maker": "Days of Wonder",
+    "minPlayers": "2",
+    "maxPlayers": "5",
+    "image": "https://res.cloudinary.com/csicdn/image/upload/c_pad,fl_lossy,h_350,q_auto,w_350/v1/Images/Products/Misc%20Art/Days%20of%20Wonder/full/dow_smallworld.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game6": {
+    "title": "Dead of Winter",
+    "typeId": "type2",
+    "maker": "Plaid Hat Games",
+    "minPlayers": "2",
+    "maxPlayers": "5",
+    "image": "https://boardgamesland.com/wp-content/uploads/2018/12/best-zombie-board-games-dead-of-winter.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game7": {
+    "title": "Trivial Pursuit Classic Edition",
+    "typeId": "type9",
+    "maker": "Hasbro Gaming",
+    "minPlayers": "2",
+    "maxPlayers": "6",
+    "image": "https://scheels.scene7.com/is/image/Scheels/63050953408?wid=600&hei=600&qlt=75",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game8": {
+    "title": "Betrayal at the House on the Hill",
+    "typeId": "type3",
+    "maker": "Avalon Hill",
+    "minPlayers": "3",
+    "maxPlayers": "6",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/71Ycnypz58L._SX466_.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game9": {
+    "title": "Axis and Allies 1941",
+    "typeId": "type6",
+    "maker": "Avalon Hill",
+    "minPlayers": "2",
+    "maxPlayers": "5",
+    "image": "https://cf.geekdo-images.com/itemrep/img/qwMdIAESDOJyZ1Vlhinddm4zeJk=/fit-in/246x300/pic1282890.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  },
+  "game10": {
+    "title": "Deblockle",
+    "typeId": "type8",
+    "maker": "Project Genius",
+    "minPlayers": "2",
+    "maxPlayers": "2",
+    "image": "https://prodimage.images-bn.com/pimages/0856261005816_p0_v3_s550x406.jpg",
+    "uid": "9DI9qu8Z8NfNcBe3h1NmD0KBrLq2"
+  }
+}
