@@ -1,0 +1,32 @@
+{
+  "type1": {
+    "type": "Deck Building"
+  },
+  "type2": {
+    "type": "Cooperative"
+  },
+  "type3": {
+    "type": "Hidden Traitor"
+  },
+  "type4": {
+    "type": "Legacy"
+  },
+  "type5": {
+    "type": "Eurogame"
+  },
+  "type6": {
+    "type": "War Game"
+  },
+  "type7": {
+    "type": "Area Control"
+  },
+  "type8": {
+    "type": "Abstract Strategy"
+  },
+  "type9": {
+    "type": "Trivia"
+  },
+  "type10": {
+    "type": "Traditional"
+  }
+}
