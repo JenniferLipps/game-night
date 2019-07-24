@@ -5,7 +5,9 @@ import './NewGame.scss';
 class NewGame extends React.Component {
   render() {
     return (
-      <div>placeholder</div>
+      <div className="NewGame">
+        <h1>New Game</h1>
+      </div>
     );
   }
 }

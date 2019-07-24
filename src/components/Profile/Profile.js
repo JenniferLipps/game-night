@@ -5,7 +5,9 @@ import './Profile.scss';
 class Profile extends React.Component {
   render() {
     return (
-      <div>placeholder</div>
+      <div className="Profile">
+        <h1>User Profile</h1>
+      </div>
     );
   }
 }
