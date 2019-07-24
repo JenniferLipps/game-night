@@ -11,7 +11,10 @@ import firebase from 'firebase/app';
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
 import MyLibrary from '../components/MyLibrary/MyLibrary';
+import NewGame from '../components/NewGame/NewGame';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
+import Profile from '../components/Profile/Profile';
+import SingleGame from '../components/SingleGame/SingleGame';
 import fbConnection from '../helpers/data/fbConnection';
 import './App.scss';
 
@@ -66,7 +69,10 @@ class App extends React.Component {
                 <Switch>
                   <PublicRoute path='/auth' component={Auth} authed={authed} />
                   <PrivateRoute path='/home' component={Home} authed={authed} />
-                  <PrivateRoute path='/mylibrary' component={MyLibrary} authed={authed} />
+                  <PrivateRoute path='/myLibrary' component={MyLibrary} authed={authed} />
+                  <PrivateRoute path='/game/:id' component={SingleGame} authed={authed} />
+                  <PrivateRoute path='/newGame' component={NewGame} authed={authed} />
+                  <PrivateRoute path='/userName' component={Profile} authed={authed} />
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>
