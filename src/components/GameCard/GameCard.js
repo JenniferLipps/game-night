@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import myGameShape from '../../helpers/theProps/myGameShape';
 
@@ -11,13 +12,14 @@ class GameCard extends React.Component {
 
   render() {
     const { myGame } = this.props;
+    const mySingleGameLink = `/game/${myGame.id}`;
     return (
       <div className="GameCard col-3">
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">{myGame.title}</h5>
             <div className="card-img"><img src={myGame.image} alt="..." className="img-fluid" /></div>
-            <button className="btn btn-warning">Remove from My Library</button>
+            <Link className="btn btn-warning" to={mySingleGameLink}>View Game Info</Link>
           </div>
         </div>
       </div>

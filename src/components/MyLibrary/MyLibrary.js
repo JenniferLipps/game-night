@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 
 import getMyGames from '../../helpers/data/myGamesData';
@@ -24,7 +24,6 @@ class MyLibrary extends React.Component {
   }
 
   render() {
-    const singleGameLink = '/game/1234';
     const showAllMyGames = this.state.myGames.map(myGame => (
       <GameCard
       key = {myGame.id}
@@ -35,7 +34,6 @@ class MyLibrary extends React.Component {
     return (
       <div className="MyLibrary">
         <h1>My Library</h1>
-        <Link className="btn btn-info" to={singleGameLink}>Single Game</Link>
         <div className="gameCardDiv d-flex">
           { showAllMyGames }
         </div>
