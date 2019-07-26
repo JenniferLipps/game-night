@@ -11,7 +11,7 @@ class GameCard extends React.Component {
   }
 
   render() {
-    const { myGame } = this.props;
+    const { myGame, myType } = this.props;
     const mySingleGameLink = `/game/${myGame.id}`;
     return (
       <div className="GameCard col-3">
@@ -20,6 +20,7 @@ class GameCard extends React.Component {
             <h5 className="card-title">{myGame.title}</h5>
             <div className="card-img"><img src={myGame.image} alt="..." className="img-fluid" /></div>
             <Link className="btn btn-warning" to={mySingleGameLink}>View Game Info</Link>
+            <div>{myType.type}</div>
           </div>
         </div>
       </div>

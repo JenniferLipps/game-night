@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import getMyGames from '../../helpers/data/myGamesData';
+import allGameTypes from '../../helpers/data/gameTypesData';
 import GameCard from '../GameCard/GameCard';
 
 import './MyLibrary.scss';
@@ -10,6 +11,7 @@ import './MyLibrary.scss';
 class MyLibrary extends React.Component {
   state = {
     myGames: [],
+    gameTypes: [],
   }
 
   getGames = () => {
@@ -19,17 +21,28 @@ class MyLibrary extends React.Component {
       .catch(err => console.error('no games in MyLib', err));
   }
 
+  getGameTypes = () => {
+    allGameTypes.getGameTypes()
+      .then(gameTypes => this.setState({ gameTypes }))
+      .catch(err => console.error('did not get types', err));
+  }
+
   componentDidMount() {
+    this.getGameTypes();
     this.getGames();
   }
 
   render() {
-    const showAllMyGames = this.state.myGames.map(myGame => (
-      <GameCard
+    const showAllMyGames = this.state.myGames.map((myGame) => {
+      const myType = this.state.gameTypes.find(x => myGame.typeId === x.id);
+      console.error(myType);
+      return <GameCard
       key = {myGame.id}
       myGame = {myGame}
-      />
-    ));
+      myType = {myType}
+      />;
+    });
+
     const gameTypesLink = '/gameTypes';
 
     return (

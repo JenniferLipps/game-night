@@ -4,7 +4,7 @@ import firebaseConfig from '../apiKeys.json';
 const baseUrl = firebaseConfig.firebaseConfig.databaseURL;
 
 const getGameTypes = () => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}/gamesTypes.json`)
+  axios.get(`${baseUrl}/gameTypes.json`)
     .then((res) => {
       const gameTypes = [];
       Object.keys(res.data).forEach((fbKey) => {
