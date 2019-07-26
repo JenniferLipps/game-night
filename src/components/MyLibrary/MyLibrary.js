@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import getMyGames from '../../helpers/data/myGamesData';
@@ -30,10 +30,12 @@ class MyLibrary extends React.Component {
       myGame = {myGame}
       />
     ));
+    const gameTypesLink = '/gameTypes';
 
     return (
       <div className="MyLibrary col">
         <h1>My Library</h1>
+        <Link className="btn btn-warning" to={gameTypesLink}>View All Types of Games</Link>
         <div className="gameCardDiv d-flex">
           { showAllMyGames }
         </div>
