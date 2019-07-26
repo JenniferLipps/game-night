@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
-
+import 'firebase/auth';
 import getMyGames from '../../helpers/data/myGamesData';
 import GameCard from '../GameCard/GameCard';
 
@@ -32,7 +32,7 @@ class MyLibrary extends React.Component {
     ));
 
     return (
-      <div className="MyLibrary">
+      <div className="MyLibrary col">
         <h1>My Library</h1>
         <div className="gameCardDiv d-flex">
           { showAllMyGames }

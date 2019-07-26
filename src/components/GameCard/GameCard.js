@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
 import myGameShape from '../../helpers/theProps/myGameShape';
 

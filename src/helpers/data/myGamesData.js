@@ -18,7 +18,7 @@ const getMyGames = uid => new Promise((resolve, reject) => {
     .catch(err => console.error('no games from FB', err));
 });
 
-const mySingleGame = myGameId => axios.get(`${baseUrl}/games/${mySingleGame}.json`);
+const mySingleGame = myGameId => axios.get(`${baseUrl}/games/${myGameId}.json`);
 
 export default {
   getMyGames,
