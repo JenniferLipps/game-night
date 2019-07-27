@@ -20,7 +20,10 @@ const getMyGames = uid => new Promise((resolve, reject) => {
 
 const mySingleGame = myGameId => axios.get(`${baseUrl}/games/${myGameId}.json`);
 
+const postGame = newGame => axios.post(`${baseUrl}/games.json`, newGame);
+
 export default {
   getMyGames,
   mySingleGame,
+  postGame,
 };
