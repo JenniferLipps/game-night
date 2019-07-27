@@ -41,7 +41,7 @@ class MyLibrary extends React.Component {
       return <GameCard
       key = {myGame.id}
       myGame = {myGame}
-      myType = {myType || {type: ''}}
+      myType = {myType || { type: '' }}
       />;
     });
 
