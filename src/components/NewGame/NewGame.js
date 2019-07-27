@@ -1,7 +1,15 @@
 import React from 'react';
+import {
+  // Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  UncontrolledDropdown,
+} from 'reactstrap';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import allGameTypes from '../../helpers/data/gameTypesData';
 import myGames from '../../helpers/data/myGamesData';
 
 import './NewGame.scss';
@@ -17,6 +25,17 @@ const defaultGame = {
 class NewGame extends React.Component {
   state = {
     newGame: defaultGame,
+    gameTypes: [],
+  }
+
+  getGameTypes = () => {
+    allGameTypes.getGameTypes()
+      .then(gameTypes => this.setState({ gameTypes }))
+      .catch(err => console.error('did not get types', err));
+  }
+
+  componentDidMount() {
+    this.getGameTypes();
   }
 
   formFieldStringState = (name, e) => {
@@ -42,12 +61,21 @@ class NewGame extends React.Component {
       .catch(err => console.error('unable to save game', err));
   }
 
+  selectGameType = (e) => {
+    e.preventDefault();
+    const tempGame = { ...this.state.newGame };
+    tempGame.typeId = e.target.id;
+    this.setState({ newGame: tempGame });
+  }
+
   render() {
     const { newGame } = this.state;
+    const createDropdownItems = this.state.gameTypes.map(gameType => (<DropdownItem id={gameType.id} onClick={this.selectGameType}>{gameType.type}</DropdownItem>));
+
     return (
       <div className="NewGame">
         <h1>Create a New Game</h1>
-        <form onSubmit={this.submitGame}>
+        <form>
         <div className="form-group">
           <label htmlFor="title">Game Title</label>
           <input
@@ -92,8 +120,8 @@ class NewGame extends React.Component {
           onChange={this.changeMaxPlayers}
           />
         </div>
-        {/* <div className="form-group">
-          <label htmlFor="typeId">Select Type of Game</label>
+        <div className="form-group">
+          {/* <label htmlFor="typeId">Select Type of Game</label>
           <input type="select" name="select" id="typeId">
             <option value="type1">Deck Building</option>
             <option value="type2">Cooperative</option>
@@ -105,9 +133,17 @@ class NewGame extends React.Component {
             <option value="type8">Abstract Strategy</option>
             <option value="type9">Trivia</option>
             <option value="type10">Traditional</option>
-          </input>
-        </div> */}
-        <button className="btn btn-warning">Add This Game</button>
+          </input> */}
+          <UncontrolledDropdown>
+      <DropdownToggle caret>
+        Dropdown
+      </DropdownToggle>
+      <DropdownMenu>
+        { createDropdownItems }
+      </DropdownMenu>
+    </UncontrolledDropdown>
+        </div>
+        <button className="btn btn-warning" onClick={this.submitGame}>Add This Game</button>
       </form>
       </div>
     );

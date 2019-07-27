@@ -20,7 +20,7 @@ class GameCard extends React.Component {
             <h5 className="card-title">{myGame.title}</h5>
             <div className="card-img"><img src={myGame.image} alt="..." className="img-fluid" /></div>
             <Link className="btn btn-warning" to={mySingleGameLink}>View Game Info</Link>
-            <div>{myType.type}</div>
+            <div>{myType.type || ''}</div>
           </div>
         </div>
       </div>

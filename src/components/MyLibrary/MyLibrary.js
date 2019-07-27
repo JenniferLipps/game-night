@@ -23,13 +23,15 @@ class MyLibrary extends React.Component {
 
   getGameTypes = () => {
     allGameTypes.getGameTypes()
-      .then(gameTypes => this.setState({ gameTypes }))
+      .then((gameTypes) => {
+        this.setState({ gameTypes });
+        this.getGames();
+      })
       .catch(err => console.error('did not get types', err));
   }
 
   componentDidMount() {
     this.getGameTypes();
-    this.getGames();
   }
 
   render() {
@@ -39,7 +41,7 @@ class MyLibrary extends React.Component {
       return <GameCard
       key = {myGame.id}
       myGame = {myGame}
-      myType = {myType}
+      myType = {myType || {type: ''}}
       />;
     });
 
