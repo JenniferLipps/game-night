@@ -121,22 +121,9 @@ class NewGame extends React.Component {
           />
         </div>
         <div className="form-group">
-          {/* <label htmlFor="typeId">Select Type of Game</label>
-          <input type="select" name="select" id="typeId">
-            <option value="type1">Deck Building</option>
-            <option value="type2">Cooperative</option>
-            <option value="type3">Hidden Traitor</option>
-            <option value="type4">Legacy</option>
-            <option value="type5">Eurogame</option>
-            <option value="type6">War Game</option>
-            <option value="type7">Area Control</option>
-            <option value="type8">Abstract Strategy</option>
-            <option value="type9">Trivia</option>
-            <option value="type10">Traditional</option>
-          </input> */}
-          <UncontrolledDropdown>
+    <UncontrolledDropdown>
       <DropdownToggle caret>
-        Dropdown
+        Select Game Type
       </DropdownToggle>
       <DropdownMenu>
         { createDropdownItems }

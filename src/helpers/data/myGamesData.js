@@ -22,8 +22,11 @@ const mySingleGame = myGameId => axios.get(`${baseUrl}/games/${myGameId}.json`);
 
 const postGame = newGame => axios.post(`${baseUrl}/games.json`, newGame);
 
+const deleteMyGame = myGameId => axios.delete(`${baseUrl}/games/${myGameId}.json`);
+
 export default {
   getMyGames,
   mySingleGame,
   postGame,
+  deleteMyGame,
 };

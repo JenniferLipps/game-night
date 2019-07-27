@@ -15,6 +15,13 @@ class SingleGame extends React.Component {
       .catch(err => console.error('cannot get single game', err));
   }
 
+  deleteMyGame = () => {
+    const myGameId = this.props.match.params.id;
+    myGames.deleteMyGame(myGameId)
+      .then(() => this.props.history.push('/myLibrary'))
+      .catch(err => console.error('cannot delete single game', err));
+  }
+
   render() {
     const { myGame } = this.state;
     return (
@@ -25,6 +32,7 @@ class SingleGame extends React.Component {
         <h3>Produced by {myGame.maker}</h3>
         <h5>Minimum players: {myGame.minPlayers}</h5>
         <h5>Maximum players: {myGame.maxPlayers}</h5>
+        <button className="btn btn-danger" onClick={this.deleteMyGame}>Remove from My Library</button>
       </div>
     );
   }
