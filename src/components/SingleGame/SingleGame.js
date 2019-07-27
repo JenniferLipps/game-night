@@ -21,6 +21,7 @@ class SingleGame extends React.Component {
       <div className="SingleGame">
         <h3>{myGame.title}</h3>
         <div><img src={myGame.image} alt={myGame.title} className="img-fluid" /></div>
+        {/* <div>{myType.type}</div> */}
         <h3>Produced by {myGame.maker}</h3>
         <h5>Minimum players: {myGame.minPlayers}</h5>
         <h5>Maximum players: {myGame.maxPlayers}</h5>
