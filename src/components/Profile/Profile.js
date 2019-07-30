@@ -2,30 +2,38 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import ProfileDisplay from '../ProfileDisplay/ProfileDisplay';
 import userInfo from '../../helpers/data/userData';
 
 import './Profile.scss';
 
 class Profile extends React.Component {
   state = {
-    myName: {},
+    userName: [],
   }
 
+  getUserName = () => {
+    const { uid } = firebase.auth().currentUser;
+    userInfo.getUserInfo(uid)
+      .then(userName => this.setState({ userName }))
+      .catch(err => console.error('no name in Profile', err));
+  };
+
   componentDidMount() {
-    const getUserName = () => {
-      const { uid } = firebase.auth().currentUser;
-      userInfo.getUserInfo(uid)
-        .then(oneName => this.setState({ myName: oneName.data }))
-        .catch(err => console.error('no name in Profile', err));
-    };
+    this.getUserName();
   }
 
   render() {
-    const { myName } = this.props;
+    const showMyName = this.state.userName.map(myProfileName => (
+      <ProfileDisplay
+      key = {myProfileName.id}
+      myProfileName = {myProfileName}
+      />
+    ));
     return (
       <div className="Profile">
         <h1>User Profile</h1>
-        <div>{myName.userName}</div>
+        <div>{ showMyName }</div>
       </div>
     );
   }
