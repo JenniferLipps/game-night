@@ -7,6 +7,8 @@ import userInfo from '../../helpers/data/userData';
 
 import './Profile.scss';
 
+const createUserName = 
+
 class Profile extends React.Component {
   state = {
     userName: [],

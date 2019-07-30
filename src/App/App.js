@@ -7,6 +7,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import firebase from 'firebase/app';
+import userInfo from '../helpers/data/userData';
 
 import Auth from '../components/Auth/Auth';
 import GameTypes from '../components/GameTypes/GameTypes';
@@ -37,7 +38,6 @@ const PrivateRoute = ({ component: Component, authed, ...rest }) => {
   return <Route {...rest} render={props => routeChecker(props)} />;
 };
 
-
 class App extends React.Component {
   state = {
     authed: false,
@@ -46,7 +46,15 @@ class App extends React.Component {
   componentDidMount() {
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.setState({ authed: true });
+        userInfo.getUserInfo(user.uid)
+          .then((userArray) => {
+            if (userArray.length > 0) {
+              this.setState({ authed: true });
+            }
+            else {}
+          })
+          .catch(err => console.error('no name in Profile', err));
+        
       } else {
         this.setState({ authed: false });
       }
@@ -84,6 +92,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
+};
 
 export default App;
