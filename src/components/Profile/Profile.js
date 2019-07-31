@@ -2,14 +2,13 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import ProfileDisplay from '../ProfileDisplay/ProfileDisplay';
 import userInfo from '../../helpers/data/userData';
 
 import './Profile.scss';
 
 class Profile extends React.Component {
   state = {
-    userName: [],
+    userName: '',
   }
 
   getUserName = () => {
@@ -24,16 +23,20 @@ class Profile extends React.Component {
   }
 
   render() {
-    const showMyName = this.state.userName.map(myProfileName => (
-      <ProfileDisplay
-      key = {myProfileName.id}
-      myProfileName = {myProfileName}
-      />
-    ));
+    const myUserName = this.state.userName;
+    // const showMyName = this.state.userName.map(myProfileName => (
+    //   <ProfileDisplay
+    //   key = {myProfileName.id}
+    //   myProfileName = {myProfileName}
+    //   />
+    // ));
     return (
       <div className="Profile">
         <h1>User Profile</h1>
-        <div>{ showMyName }</div>
+        {/* <div>{ showMyName }</div> */}
+        <div className="card-body">
+            <h3>{myUserName.userName}</h3>
+          </div>
       </div>
     );
   }

@@ -37,7 +37,6 @@ const PrivateRoute = ({ component: Component, authed, ...rest }) => {
   return <Route {...rest} render={props => routeChecker(props)} />;
 };
 
-
 class App extends React.Component {
   state = {
     authed: false,

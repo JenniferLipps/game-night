@@ -16,6 +16,7 @@ import './NewGame.scss';
 
 const defaultGame = {
   title: '',
+  imageUrl: '',
   typeId: '',
   maker: '',
   minPlayers: '',
@@ -46,6 +47,8 @@ class NewGame extends React.Component {
 
   titleChange = e => this.formFieldStringState('title', e);
 
+  imageChange = e => this.formFieldStringState('imageUrl', e);
+
   makerChange = e => this.formFieldStringState('maker', e);
 
   changeMinPlayers = e => this.formFieldStringState('minPlayers', e);
@@ -70,7 +73,8 @@ class NewGame extends React.Component {
 
   render() {
     const { newGame } = this.state;
-    const createDropdownItems = this.state.gameTypes.map(gameType => (<DropdownItem id={gameType.id} onClick={this.selectGameType}>{gameType.type}</DropdownItem>));
+    const createDropdownItems = this.state.gameTypes.map(gameType => (
+    <DropdownItem id={gameType.id} onClick={this.selectGameType}>{gameType.type}</DropdownItem>));
 
     return (
       <div className="NewGame">
@@ -85,6 +89,17 @@ class NewGame extends React.Component {
           placeholder="New Title"
           value={newGame.title}
           onChange={this.titleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="imageUrl">Image URL</label>
+          <input
+          type="text"
+          className="form-control"
+          id="imageUrl"
+          placeholder="your image link"
+          value={newGame.image}
+          onChange={this.imageChange}
           />
         </div>
         <div className="form-group">

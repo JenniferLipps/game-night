@@ -13,9 +13,14 @@ const getUserInfo = uid => new Promise((resolve, reject) => {
           userInfo.push(res.data[fbKey]);
         });
       }
-      resolve(userInfo);
+      resolve(userInfo[0]);
     })
     .catch(err => console.error('no user from FB', err));
 });
 
-export default { getUserInfo };
+const postUser = newUser => axios.post(`${baseUrl}/users.json`, newUser);
+
+export default {
+  getUserInfo,
+  postUser,
+};

@@ -37,7 +37,6 @@ class MyLibrary extends React.Component {
   render() {
     const showAllMyGames = this.state.myGames.map((myGame) => {
       const myType = this.state.gameTypes.find(x => myGame.typeId === x.id);
-      console.error(myType);
       return <GameCard
       key = {myGame.id}
       myGame = {myGame}
