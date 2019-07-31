@@ -9,6 +9,7 @@ import {
 import firebase from 'firebase/app';
 
 import Auth from '../components/Auth/Auth';
+import EditProfile from '../components/EditProfile/EditProfile';
 import GameTypes from '../components/GameTypes/GameTypes';
 import Home from '../components/Home/Home';
 import MyLibrary from '../components/MyLibrary/MyLibrary';
@@ -74,6 +75,7 @@ class App extends React.Component {
                   <PrivateRoute path='/game/:id' component={SingleGame} authed={authed} />
                   <PrivateRoute path='/newGame' component={NewGame} authed={authed} />
                   <PrivateRoute path='/userName' component={Profile} authed={authed} />
+                  <PrivateRoute path='/name/:id' component={EditProfile} authed={authed} />
                   <Redirect from="*" to="/auth" />
                 </Switch>
               </div>
