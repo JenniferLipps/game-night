@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -24,19 +25,14 @@ class Profile extends React.Component {
 
   render() {
     const myUserName = this.state.userName;
-    // const showMyName = this.state.userName.map(myProfileName => (
-    //   <ProfileDisplay
-    //   key = {myProfileName.id}
-    //   myProfileName = {myProfileName}
-    //   />
-    // ));
+    const myUserNameEdit = `/name/${myUserName.id}`;
     return (
       <div className="Profile">
         <h1>User Profile</h1>
-        {/* <div>{ showMyName }</div> */}
         <div className="card-body">
             <h3>{myUserName.userName}</h3>
-          </div>
+            <Link className="btn btn-warning" to={myUserNameEdit}>Edit User Name</Link>
+        </div>
       </div>
     );
   }
