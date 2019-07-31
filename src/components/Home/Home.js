@@ -15,7 +15,6 @@ class Home extends React.Component {
     const { uid } = firebase.auth().currentUser;
     userInfo.getUserInfo(uid)
       .then((user) => {
-        console.error(user.userName);
         this.setState({ userName: user.userName || '' });
       })
       .catch(err => console.error('no name in Home', err));
@@ -33,7 +32,6 @@ class Home extends React.Component {
 
   render() {
     const userNameExists = this.state.userName;
-    console.error('State: ', userNameExists);
     let renderData;
 
     if (userNameExists !== undefined || userNameExists !== '') {

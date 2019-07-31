@@ -13,7 +13,6 @@ const getUserInfo = uid => new Promise((resolve, reject) => {
           userInfo.push(res.data[fbKey]);
         });
       }
-      console.error(userInfo[0]);
       resolve(userInfo[0]);
     })
     .catch(err => console.error('no user from FB', err));

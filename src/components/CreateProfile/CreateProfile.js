@@ -15,7 +15,6 @@ class CreateProfile extends React.Component {
     const tempName = { ...this.state.newUser };
     tempName[name] = e.target.value;
     this.setState({ newUser: tempName });
-    console.error(this.state.newUser);
   }
 
   nameChange = e => this.formFieldStringState('userName', e);
