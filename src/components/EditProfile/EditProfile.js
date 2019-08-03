@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from 'firebase/app';
+// import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import userInfo from '../../helpers/data/userData';
@@ -14,15 +14,11 @@ class EditProfile extends React.Component {
     newUser: defaultUser,
   }
 
-  getUserName = () => {
-    const { uid } = firebase.auth().currentUser;
-    userInfo.getUserInfo(uid)
+  componentDidMount() {
+    const profileId = this.props.match.params.id;
+    userInfo.getUserInfo(profileId)
       .then(nameFromFb => this.setState({ newUser: nameFromFb.data }))
       .catch(err => console.error('no name in EditProfile', err));
-  };
-
-  componentDidMount() {
-    this.getUserName();
   }
 
   formFieldStringState = (name, e) => {
@@ -36,10 +32,11 @@ class EditProfile extends React.Component {
   submitUpdatedName = (e) => {
     e.preventDefault();
     const saveUser = { ...this.state.newUser };
-    saveUser.uid = firebase.auth().currentUser.uid;
-    userInfo.putUserName(saveUser)
-      .then(() => this.props.history.push('/home'))
-      .catch(err => console.error('unable to save', err));
+    const profileId = this.props.match.params.id;
+    console.error(profileId);
+    // userInfo.putUserName(saveUser, profileId)
+    //   .then(() => this.props.history.push('/home'))
+    //   .catch(err => console.error('unable to save', err));
   }
 
   render() {

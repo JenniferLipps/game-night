@@ -20,7 +20,7 @@ const getUserInfo = uid => new Promise((resolve, reject) => {
 
 const postUser = newUser => axios.post(`${baseUrl}/users.json`, newUser);
 
-const putUserName = (saveUser, uid) => axios.put(`${baseUrl}/users/${uid}.json`, saveUser);
+const putUserName = (saveUser, profileId) => axios.put(`${baseUrl}/users/${profileId}.json`, saveUser);
 
 export default {
   getUserInfo,
