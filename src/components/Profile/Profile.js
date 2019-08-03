@@ -19,7 +19,7 @@ class Profile extends React.Component {
 
   getUserName = () => {
     const { uid } = firebase.auth().currentUser;
-    userInfo.getUserInfo(uid)
+    userInfo.getUserInfoByUid(uid)
       .then(userName => this.setState({ userName }))
       .catch(err => console.error('no name in Profile', err));
   };

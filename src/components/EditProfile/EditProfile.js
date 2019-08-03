@@ -16,32 +16,28 @@ class EditProfile extends React.Component {
 
   componentDidMount() {
     const profileId = this.props.match.params.id;
-    userInfo.getUserInfo(profileId)
-      .then(nameFromFb => this.setState({ newUser: nameFromFb.data }))
+    userInfo.getUserInfoById(profileId)
+      .then(nameFromFb => this.setState({ newUser: nameFromFb }))
       .catch(err => console.error('no name in EditProfile', err));
   }
 
-  formFieldStringState = (name, e) => {
+  nameChange = (e) => {
     const tempName = { ...this.state.newUser };
-    tempName[name] = e.target.value;
+    tempName.userName = e.target.value;
     this.setState({ newUser: tempName });
   }
-
-  nameChange = e => this.formFieldStringState('newUser', e);
 
   submitUpdatedName = (e) => {
     e.preventDefault();
     const saveUser = { ...this.state.newUser };
     const profileId = this.props.match.params.id;
     console.error(profileId);
-    // userInfo.putUserName(saveUser, profileId)
-    //   .then(() => this.props.history.push('/home'))
-    //   .catch(err => console.error('unable to save', err));
+    userInfo.putUserName(saveUser, profileId)
+      .then(() => this.props.history.push('/home'))
+      .catch(err => console.error('unable to save', err));
   }
 
   render() {
-    const newUser = this.state;
-
     return (
       <div className="Profile">
         <h1>Edit Your User Name</h1>
@@ -53,7 +49,7 @@ class EditProfile extends React.Component {
             className="form-control"
             id="userName"
             placeholder="Your Name"
-            value={newUser.userName}
+            value={this.state.newUser.userName}
             onChange={this.nameChange}
             />
             </div>
