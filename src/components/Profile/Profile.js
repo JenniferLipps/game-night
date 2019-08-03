@@ -3,18 +3,23 @@ import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import userNameShape from '../../helpers/theProps/userNameShape';
 import userInfo from '../../helpers/data/userData';
 
 import './Profile.scss';
 
 class Profile extends React.Component {
+  static propTypes = {
+    myUsername: userNameShape.userNameShape,
+  }
+
   state = {
     userName: '',
   }
 
   getUserName = () => {
     const { uid } = firebase.auth().currentUser;
-    userInfo.getUserInfo(uid)
+    userInfo.getUserInfoByUid(uid)
       .then(userName => this.setState({ userName }))
       .catch(err => console.error('no name in Profile', err));
   };

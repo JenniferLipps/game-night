@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from 'firebase/app';
+// import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import userInfo from '../../helpers/data/userData';
@@ -14,37 +14,30 @@ class EditProfile extends React.Component {
     newUser: defaultUser,
   }
 
-  getUserName = () => {
-    const { uid } = firebase.auth().currentUser;
-    userInfo.getUserInfo(uid)
-      .then(nameFromFb => this.setState({ newUser: nameFromFb.data }))
-      .catch(err => console.error('no name in EditProfile', err));
-  };
-
   componentDidMount() {
-    this.getUserName();
+    const profileId = this.props.match.params.id;
+    userInfo.getUserInfoById(profileId)
+      .then(nameFromFb => this.setState({ newUser: nameFromFb }))
+      .catch(err => console.error('no name in EditProfile', err));
   }
 
-  formFieldStringState = (name, e) => {
+  nameChange = (e) => {
     const tempName = { ...this.state.newUser };
-    tempName[name] = e.target.value;
+    tempName.userName = e.target.value;
     this.setState({ newUser: tempName });
   }
-
-  nameChange = e => this.formFieldStringState('newUser', e);
 
   submitUpdatedName = (e) => {
     e.preventDefault();
     const saveUser = { ...this.state.newUser };
-    saveUser.uid = firebase.auth().currentUser.uid;
-    userInfo.putUserName(saveUser)
+    const profileId = this.props.match.params.id;
+    console.error(profileId);
+    userInfo.putUserName(saveUser, profileId)
       .then(() => this.props.history.push('/home'))
       .catch(err => console.error('unable to save', err));
   }
 
   render() {
-    const newUser = this.state;
-
     return (
       <div className="Profile">
         <h1>Edit Your User Name</h1>
@@ -56,7 +49,7 @@ class EditProfile extends React.Component {
             className="form-control"
             id="userName"
             placeholder="Your Name"
-            value={newUser.userName}
+            value={this.state.newUser.userName}
             onChange={this.nameChange}
             />
             </div>

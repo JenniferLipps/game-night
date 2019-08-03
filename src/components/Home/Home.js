@@ -13,7 +13,7 @@ class Home extends React.Component {
 
   getUserName = () => {
     const { uid } = firebase.auth().currentUser;
-    userInfo.getUserInfo(uid)
+    userInfo.getUserInfoByUid(uid)
       .then((user) => {
         this.setState({ userName: user.userName || '' });
       })
