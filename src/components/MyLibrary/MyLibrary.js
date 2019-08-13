@@ -50,7 +50,7 @@ class MyLibrary extends React.Component {
       <div className="MyLibrary col">
         <h1>My Library</h1>
         <Link className="btn btn-warning" to={gameTypesLink}>View All Types of Games</Link>
-        <div className="gameCardDiv d-flex">
+        <div className="gameCardDiv d-flex flex-wrap">
           { showAllMyGames }
         </div>
       </div>

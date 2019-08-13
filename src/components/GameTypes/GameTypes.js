@@ -2,6 +2,8 @@ import React from 'react';
 import allGameTypes from '../../helpers/data/gameTypesData';
 import Types from '../Types/Types';
 
+import './GameTypes.scss';
+
 class GameTypes extends React.Component {
   state = {
     gameTypes: [],
@@ -28,7 +30,8 @@ class GameTypes extends React.Component {
     return (
       <div className="GameTypes">
         <h2>Game Types</h2>
-        <div className="d-flex">
+        {/* <div className="gameTypesDiv"> */}
+        <div className="d-flex flex-wrap">
         { displayGameTypes }
         </div>
       </div>

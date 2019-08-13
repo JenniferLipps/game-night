@@ -10,7 +10,7 @@ class Types extends React.Component {
   render() {
     const { gameType } = this.props;
     return (
-      <div className="Types">
+      <div className="Types col-3">
         <div className="card">
           <div className="card-body">
             <h3>{gameType.type}</h3>
