@@ -47,7 +47,7 @@ class MyLibrary extends React.Component {
     const gameTypesLink = '/gameTypes';
 
     return (
-      <div className="MyLibrary col">
+      <div className="MyLibrary">
         <h1>My Library</h1>
         <Link className="btn btn-warning" to={gameTypesLink}>View All Types of Games</Link>
         <div className="gameCardDiv d-flex flex-wrap">

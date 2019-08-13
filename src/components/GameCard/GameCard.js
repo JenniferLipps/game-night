@@ -14,7 +14,7 @@ class GameCard extends React.Component {
     const { myGame, myType } = this.props;
     const mySingleGameLink = `/game/${myGame.id}`;
     return (
-      <div className="GameCard col-3">
+      <div className="GameCard col-4">
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">{myGame.title}</h5>
