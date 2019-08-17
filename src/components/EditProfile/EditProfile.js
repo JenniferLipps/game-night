@@ -3,6 +3,8 @@ import 'firebase/auth';
 
 import userInfo from '../../helpers/data/userData';
 
+import './EditProfile.scss';
+
 const defaultUser = {
   userName: '',
   uid: '',

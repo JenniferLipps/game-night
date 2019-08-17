@@ -1,3 +1,10 @@
+@import '../../styles/colors';
+
+.libraryCard {
+  background-color: $card-background;
+  color: white;
+}
+
 .card-img {
   width: 100%;
   height: 15vw;

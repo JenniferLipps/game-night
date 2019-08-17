@@ -1,6 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import gameShape from '../../helpers/theProps/myGameShape';
+
+import './Types.scss';
 
 class Types extends React.Component {
   static propTypes = {
@@ -10,8 +11,8 @@ class Types extends React.Component {
   render() {
     const { gameType } = this.props;
     return (
-      <div className="Types col-3">
-        <div className="card">
+      <div className="col-3">
+        <div className="card boardGameTypes">
           <div className="card-body">
             <h3>{gameType.type}</h3>
           </div>

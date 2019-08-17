@@ -30,7 +30,6 @@ class GameTypes extends React.Component {
     return (
       <div className="GameTypes">
         <h2>Game Types</h2>
-        {/* <div className="gameTypesDiv"> */}
         <div className="d-flex flex-wrap">
         { displayGameTypes }
         </div>

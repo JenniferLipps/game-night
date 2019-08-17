@@ -15,7 +15,7 @@ class GameCard extends React.Component {
     const mySingleGameLink = `/game/${myGame.id}`;
     return (
       <div className="GameCard col-4">
-        <div className="card">
+        <div className="card libraryCard">
           <div className="card-body">
             <h5 className="card-title">{myGame.title}</h5>
             <div className="card-img"><img src={myGame.image} alt="..." className="img-fluid" /></div>
