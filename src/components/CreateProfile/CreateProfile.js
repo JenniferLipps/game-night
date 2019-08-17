@@ -2,6 +2,8 @@ import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import './CreateProfile.scss';
+
 const defaultUser = {
   userName: '',
 };
@@ -30,7 +32,7 @@ class CreateProfile extends React.Component {
     const { newUser } = this.state;
 
     return (
-      <div>
+      <div className="CreateProfile">
         <form>
           <h1>Create a User Name</h1>
             <div className="form-group">

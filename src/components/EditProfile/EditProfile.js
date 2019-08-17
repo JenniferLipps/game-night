@@ -1,8 +1,9 @@
 import React from 'react';
-// import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import userInfo from '../../helpers/data/userData';
+
+import './EditProfile.scss';
 
 const defaultUser = {
   userName: '',
