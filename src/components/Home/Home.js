@@ -44,6 +44,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
         { renderData }
+        <div className="titleDescription">
+        <h4>Organize your board games to make every game night a success</h4>
+        </div>
       </div>
     );
   }
